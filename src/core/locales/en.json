@@ -1,0 +1,70 @@
+{
+  "global": {
+    "actions": {
+      "save": "Save",
+      "ok": "OK",
+      "cancel": "Cancel"
+    }
+  },
+  "userApps": {
+    "attendance": {
+      "title": "Attendance",
+      "description": "Manage your attendance"
+    },
+    "students": {
+      "title": "Students",
+      "description": "Manage your students"
+    },
+    "staff": {
+      "title": "Staff",
+      "description": "Manage your staff & teachers"
+    },
+    "classrooms": {
+      "title": "Classrooms",
+      "description": "Manage your classrooms"
+    }
+  },
+  "userMenu": {
+    "accountSettings": "Account Settings",
+    "language": "Language",
+    "signOut": "Sign Out"
+  },
+  "account": {
+    "avatar": {
+      "title": "Change your picture",
+      "description": "This picture will be displayed on your profile page and in your comments.",
+      "upload": "Upload a picture"
+    },
+    "password": {
+      "title": "Password",
+      "description": "Change your password",
+      "resetBtn": "Reset my password"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "This information will be displayed publicly on your profile page."
+    },
+    "settings": {
+      "title": "Account Settings",
+      "description": "Update your account settings"
+    }
+  },
+  "menu": {
+    "main": {
+      "title": "Main",
+      "dashboard": "Dashboard",
+      "resources": {
+        "title": "Resources",
+        "googleOrgUnits": "Organization Units",
+        "users": "Users" 
+      },
+      "account": "Account"
+    }
+  },
+  "error": {
+    "404": {
+      "title": "Sorry we couldn't find this page.",
+      "description": "The page you're looking for isn't available.<br />Try searching again or use the Go Back button below."
+    }
+  }
+}
