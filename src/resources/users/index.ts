@@ -4,7 +4,7 @@ const resource = {
   name: "users",
   label: "Users",
   url: "/users",
-  apiUrl: "/api/user",
+  apiUrl: "/api/users",
   roles: ["admin", "teacher"],
   keepAlive: true,
   permissions: [

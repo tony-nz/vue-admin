@@ -22,11 +22,11 @@ export interface AuthConfig {
 const config: AuthConfig = {
   api: {
     csrfCookie: "/sanctum/csrf-cookie",
-    login: "/api/auth/login",
-    logout: "/api/auth/logout",
-    register: "/api/auth/register",
+    login: "/login",
+    logout: "/logout",
+    register: "/register",
     update: "/api/auth/update",
-    verify: "/api/refresh",
+    verify: "/api/auth/verify",
     permissions: "/api/auth/ability",
   },
   oauth: {

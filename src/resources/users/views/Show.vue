@@ -7,11 +7,7 @@
             <div class="flex-shrink-0">
               <img
                 class="mx-auto h-30 w-40 rounded-lg"
-                v-bind:src="
-                  getBase64Avatar(
-                    user?.thumbnailPhotoUrl ? user.thumbnailPhotoUrl : null
-                  )
-                "
+                v-bind:src="getBase64Avatar(user?.avatar ? user.avatar : null)"
                 alt=""
               />
             </div>
