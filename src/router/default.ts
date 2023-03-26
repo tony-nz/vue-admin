@@ -10,7 +10,7 @@ export const defaultRoutes: Array<RouteRecordRaw> = [
     meta: {
       title: "Home",
       isCache: true,
-      // requiresAuth: true,
+      requiresAuth: true,
       // middleware: roles,
       roles: ["admin", "teacher"],
     },

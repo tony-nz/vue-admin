@@ -16,8 +16,8 @@ const app = createApp(App);
  * @param router vue router
  */
 initPlugins(app, router);
-
 app.use(router);
+
 app.mount("#app");
 
 export default app;
