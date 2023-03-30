@@ -1,4 +1,61 @@
 {
+  "va": {
+    "datatable": {
+      "search": "Search",
+      "addFilter": "Add filter",
+      "selectedItems": "1 item selected | {count} items selected"
+    },
+    "pages": {
+      "list": "List of {resource}",
+      "create": "Create new {resource}",
+      "show": "Detail of {resource} {label}",
+      "edit": "Edit {resource} {label}",
+      "notFound": "{resource} #{id} not found"
+    },
+    "actions": {
+      "list": "List",
+      "create": "Create",
+      "show": "Show",
+      "edit": "Edit",
+      "delete": "Delete",
+      "export": "Export",
+      "clone": "Clone",
+      "add": "Add",
+      "remove": "Remove",
+      "move": "Move",
+      "associate": "Associate",
+      "dissociate": "Dissociate",
+      "locale": "Locale",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveAndAdd": "Save and add",
+      "saveAndShow": "Save and show",
+      "saveAndEdit": "Save and edit"
+    },
+    "messages": {
+      "created": "New {resource} successfully created.",
+      "updated": "{resource} #{id} successfully updated.",
+      "deleted": "{resource} #{id} successfully deleted.",
+      "moved": "{resource} #{id} successfully moved.",
+      "updatedMany": "{count} {resource} successfully updated.",
+      "deletedMany": "{count} {resource} successfully deleted.",
+      "fetched": "{count} {resource} successfully fetched."
+    },
+    "confirm": {
+      "yes": "Yes",
+      "no": "No",
+      "deleteTitle": "Delete {resource} #{id} ?",
+      "deleteMessage": "You are about deleting {resource} #{id}. This operation is irreversible.",
+      "deleteManyTitle": "Delete {count} {resource} ?",
+      "deleteManyMessage": "You are about deleting {count} {resource}. This operation is irreversible.",
+      "dissociateTitle": "Dissociate from {targetResource} #{targetId} ?",
+      "dissociateMessage": "You are about dissociate {targetResource} #{targetId} from {sourceResource} #{sourceId}."
+    },
+    "forms": {
+      "none": "None",
+      "requiredField": "{field] is required"
+    }
+  },
   "global": {
     "actions": {
       "save": "Save",

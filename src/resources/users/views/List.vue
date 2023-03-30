@@ -11,7 +11,7 @@
         <template v-slot:columns>
           <Column field="name" header="Name" :sortable="true">
             <template #body="{ data }">
-              <VaUserDisplay :user="data" />
+              <span class="text-medium">{{ data.name }}</span>
             </template>
           </Column>
           <Column field="lastLoginTime" header="Last Seen" :sortable="true">
