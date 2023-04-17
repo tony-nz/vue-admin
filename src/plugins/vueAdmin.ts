@@ -33,7 +33,7 @@ const config = {
     main: MainMenuConfig,
     user: UserMenuConfig,
   },
-  resources,
+  resources: Object.assign({}, resources),
 };
 
 /**

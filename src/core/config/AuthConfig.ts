@@ -1,26 +1,8 @@
-interface API {
-  csrfCookie: string;
-  login: string;
-  logout: string;
-  register: string;
-  update: string;
-  verify: string;
-  permissions: string;
-}
-
-interface OAuth {
-  provider: string;
-  login: string;
-  callback: string;
-}
-
-export interface AuthConfig {
-  api: API;
-  oauth: OAuth;
-}
+import type { AuthConfig } from "@tony-nz/vue-admin-core";
 
 const config: AuthConfig = {
   api: {
+    baseURL: "http://localhost:8000",
     csrfCookie: "/sanctum/csrf-cookie",
     login: "/login",
     logout: "/logout",

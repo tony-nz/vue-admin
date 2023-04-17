@@ -7,7 +7,9 @@ const MainMenuConfig = ref([
     textColor: "text-primary",
     slug: "main",
     class: "bg-success",
-    svgIcon: "/media/icons/duotone/Communication/Group.svg",
+    icon: {
+      path: "/media/icons/duotone/Communication/Group.svg",
+    },
     to: "/",
     items: [
       {
@@ -17,19 +19,18 @@ const MainMenuConfig = ref([
       {
         label: "menu.main.dashboard",
         to: "/main/dashboard",
-        svgIcon: "/media/icons/duotone/General/Settings-2.svg",
-        icon: "fas fa-cog",
+        // icon: "/media/icons/duotone/General/Settings-2.svg",
       },
       {
         label: "menu.main.account",
         to: "/main/account",
-        svgIcon: "/media/icons/duotone/General/Settings-2.svg",
-        icon: "fas fa-cog",
+        icon: "/media/icons/duotone/Code/Compiling.svg",
       },
       {
         label: "menu.main.resources.title",
-        svgIcon: "/media/icons/duotone/Code/Compiling.svg",
-        icon: "fa-duotone fa-alicorn",
+        icon: "/media/icons/duotone/Code/Compiling.svg",
+        to: "/resources",
+        type: "grid",
         items: [
           {
             label: "menu.main.resources.users",
@@ -49,13 +50,12 @@ const MainMenuConfig = ref([
     textColor: "text-primary",
     slug: "secondary",
     class: "bg-success",
-    svgIcon: "/media/icons/duotone/Communication/Group.svg",
+    icon: "/media/icons/duotone/Communication/Group.svg",
     items: [
       {
         label: "UI Components",
         to: "/secondary/dashboard",
-        svgIcon: "/media/icons/duotone/Files/Selected-file.svg",
-        icon: "fas fa-file-invoice-dollar",
+        type: "list",
         items: [
           {
             label: "Form Layout",

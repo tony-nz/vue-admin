@@ -14,6 +14,9 @@ const resource = {
     },
   ],
   fields,
+  icon: {
+    path: "/media/icons/duotone/Communication/Group.svg",
+  },
   create: {
     modal: true,
     page: true,
@@ -25,10 +28,10 @@ const resource = {
   delete: true,
   edit: {
     modal: true,
-    page: false,
+    page: true,
     sideBar: true,
   },
   routes: ["list", "create", "edit", "show"],
 };
 
-export { fields, resource };
+export default resource;

@@ -2,6 +2,9 @@ interface Main {
   type: "default";
   primaryColor: string;
   logo: {
+    alt: string;
+    class: string;
+    display: boolean;
     dark: string;
     light: string;
   };
@@ -68,27 +71,27 @@ interface Footer {
 }
 
 interface LayoutConfig {
-  themeName: string;
-  themeVersion: string;
-  themeStyle: string;
-  display: "fixed" | "fluid";
-  darkMode: boolean;
-  demo: boolean;
-  main: Main;
-  loader: Loader;
-  scrollTop: ScrollTop;
-  header: Header;
-  topMenu: TopMenu;
-  secondaryMenu: SecondaryMenu;
-  toolbar: Toolbar;
-  aside: Aside;
-  content: Content;
-  footer: Footer;
+  themeName?: string;
+  themeVersion?: string;
+  themeStyle?: string;
+  display?: "fixed" | "fluid";
+  darkMode?: boolean;
+  demo?: boolean;
+  main?: Main;
+  loader?: Loader;
+  scrollTop?: ScrollTop;
+  header?: Header;
+  topMenu?: TopMenu;
+  secondaryMenu?: SecondaryMenu;
+  toolbar?: Toolbar;
+  aside?: Aside;
+  content?: Content;
+  footer?: Footer;
 }
 
 export default LayoutConfig;
 
-export {
+export type {
   Main,
   Loader,
   ScrollTop,

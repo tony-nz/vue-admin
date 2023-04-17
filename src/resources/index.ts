@@ -1,3 +1,3 @@
-import * as users from "./users";
+import users from "./users";
 
 export { users };

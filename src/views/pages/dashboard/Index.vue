@@ -1,12 +1,10 @@
 <template>
-  <div class="home">
-    testing
-  </div>
+  <div>Dashboard</div>
 </template>
 
-<script lang="ts">
+<script>
 // import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, reactive, ref } from "vue";
 
 export default defineComponent({
   name: "Dashboard",

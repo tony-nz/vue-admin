@@ -8,7 +8,9 @@ const UserAppsConfig = ref({
       to: "/main/users",
       slug: "users",
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
+      icon: {
+        name: "book-open-reader",
+      },
       iconFill: "fill-white",
       iconBg: "bg-primary-500",
     },
@@ -18,7 +20,9 @@ const UserAppsConfig = ref({
       to: "/main/users",
       slug: "users",
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
+      icon: {
+        name: "book-open-reader",
+      },
       iconFill: "fill-white",
       iconBg: "bg-yellow-500",
     },
@@ -28,7 +32,9 @@ const UserAppsConfig = ref({
       to: "/main/users",
       slug: "users",
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
+      icon: {
+        name: "book-open-reader",
+      },
       iconFill: "fill-white",
       iconBg: "bg-red-500",
     },
@@ -38,9 +44,11 @@ const UserAppsConfig = ref({
       to: "/main/users",
       slug: "users",
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
       iconFill: "fill-white",
       iconBg: "bg-green-500",
+      icon: {
+        name: "book-open-reader",
+      },
     },
   ],
   list: [
@@ -51,7 +59,9 @@ const UserAppsConfig = ref({
       slug: "users",
 
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
+      icon: {
+        name: "book-open-reader",
+      },
     },
     {
       label: "userApps.students.title",
@@ -60,7 +70,9 @@ const UserAppsConfig = ref({
       slug: "users",
 
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
+      icon: {
+        name: "book-open-reader",
+      },
     },
     {
       label: "userApps.students.title",
@@ -69,7 +81,9 @@ const UserAppsConfig = ref({
       slug: "users",
 
       svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-      icon: "book-open-reader",
+      icon: {
+        name: "book-open-reader",
+      },
     },
   ],
 });

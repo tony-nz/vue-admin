@@ -12,8 +12,7 @@ const UserMenuConfig = ref([
     label: "userMenu.accountSettings",
     to: "/account",
     slug: "account",
-    svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-    icon: "fa-duotone fa-alicorn",
+    icon: "/media/icons/duotone/Interface/Monitor.svg",
   },
   {
     label: "userMenu.language",
@@ -47,6 +46,8 @@ const UserMenuConfig = ref([
     svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
     icon: "fa-duotone fa-alicorn",
     command: () => {
+      const store = useAuthStore();
+      store.logout();
       // store
       //   .dispatch("AuthModule/logout")
       //   .then(() => router.push({ name: "login" }));
