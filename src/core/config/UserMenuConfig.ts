@@ -38,7 +38,7 @@ const UserMenuConfig = ref({
             useAppStore()
               .logout()
               .then(() => {
-                window.location.href = "/";
+                window.location.href = "/login";
               });
           },
         },

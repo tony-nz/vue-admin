@@ -74,11 +74,7 @@ import { computed, defineComponent, onMounted, ref } from "vue";
 // import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
 
 import General from "../components/General.vue";
-import Student from "../components/Student.vue";
-import Attendance from "../components/Attendance.vue";
-import Behaviour from "../components/Behaviour.vue";
-import Contacts from "../components/Contacts.vue";
-import Groups from "../components/Groups.vue";
+import Roles from "../components/Roles.vue";
 
 // import store from "@/store";
 // import StatBox1 from "@/components/ui/stats/StatBox1.vue";
@@ -130,46 +126,12 @@ export default defineComponent({
         component: General,
       },
       {
-        name: "Groups",
-        component: Groups,
+        name: "Roles",
+        component: Roles,
       },
     ];
 
-    const studentTabs = [
-      {
-        name: "Contacts",
-        component: Contacts,
-      },
-      {
-        name: "Student Profile",
-        component: Student,
-      },
-      {
-        name: "Behaviour",
-        component: Behaviour,
-      },
-      {
-        name: "Goals",
-        component: Behaviour,
-      },
-      {
-        name: "Attendance",
-        component: Behaviour,
-      },
-    ];
     onMounted(async () => {
-      // user.value = await store.getters["UsersResource/getItem"];
-      // // add student tabs if user is a student
-      // if (user.value["student"]) {
-      //   studentTabs.forEach((t) => userTabs.push(t));
-      //   store
-      //     .dispatch("StudentsResource/getOne", {
-      //       params: { id: user.value.id },
-      //     })
-      //     .then(({ data }) => {
-      //       store.commit("StudentsResource/setItem", data);
-      //     });
-      // }
       isMounted.value = true;
     });
 

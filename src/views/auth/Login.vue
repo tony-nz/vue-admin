@@ -257,7 +257,7 @@ export default defineComponent({
   setup() {
     const allowLocal = ref(true);
     const allowOAuth = ref(false);
-    const allowRegistration = ref(false);
+    const allowRegistration = ref(true);
     const errors: any = ref({});
     const isLoggingIn = ref(false);
     const router = useRouter();
