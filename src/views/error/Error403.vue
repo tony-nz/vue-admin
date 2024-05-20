@@ -1,26 +1,26 @@
 <template>
   <div
     class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed"
-    style="background-image: url('/media/svg/illustrations/progress.svg')"
+    style="background-image: url('')"
   >
     <!--begin::Content-->
     <div class="d-flex flex-column flex-column-fluid text-center p-10 py-lg-20">
-      <!--begin::Svg Icon | path: assets/media/icons/duotune/arrows/arr015.svg-->
       <span class="svg-icon mb-10 pt-lg-20 svg-icon-5hx svg-icon-white">
-        <inline-svg src="/media/icons/duotone/arrows/arr015.svg" />
+        <!-- <inline-svg src="" /> -->
       </span>
       <!--end::Svg Icon-->
 
       <!--begin::Wrapper-->
       <div class="pt-lg-10">
         <!--begin::Logo-->
-        <h1 class="fw-bolder fs-4x text-gray-700 mt-8 mb-10">Unauthorized access</h1>
+        <h1 class="fw-bolder fs-4x text-gray-700 mt-8 mb-10">
+          Unauthorized access
+        </h1>
         <!--end::Logo-->
 
         <!--begin::Message-->
         <div class="fw-bold fs-3 text-gray-400 mb-15">
           Insufficient permissions <br />
-          Please contact the school adminstrator
         </div>
         <!--end::Message-->
 
@@ -51,6 +51,6 @@ export default defineComponent({
   components: {},
   setup() {
     return { goBack };
-  }
+  },
 });
 </script>

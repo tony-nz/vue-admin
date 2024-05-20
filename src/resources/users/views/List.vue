@@ -1,32 +1,54 @@
 <template>
-  <div>
+  <div class="flex-1 overflow-hidden">
     <VaCard
       :title="'Users'"
-      :description="'Displaying users for the organization '"
+      :description="'Effortlessly create, update, & delete user records'"
       :isLoading="isLoading"
-      class="col-span-2"
+      :clearCss="['content']"
+      :classes="{
+        base: ['overflow-hidden', 'col-span-12'],
+        content: ['flex', 'flex-col', 'flex-1', 'overflow-hidden'],
+        card: ['h-full'],
+        header: ['bg-primary-500'],
+        title: ['text-white'],
+        description: ['text-white'],
+      }"
     >
-      <VaAdvDataTable :resource="resource">
+      <VaAdvDataTable
+        @rowSelect="onRowSelect"
+        v-bind="resource.datatable"
+        :resource="resource"
+        class="flex flex-col flex-1"
+      >
         <template v-slot:toolbar></template>
         <template v-slot:columns>
           <Column field="name" header="Name" :sortable="true">
             <template #body="{ data }">
-              <span class="text-medium">{{ data.name }}</span>
+              <div class="flex items-center">
+                <button class="w-full">
+                  <div class="text-left text-sm font-normal text-slate-500">
+                    {{ data.name }}
+                  </div>
+                  <div class="text-left text-xs font-normal text-gray-700">
+                    {{ data.email }}
+                  </div>
+                </button>
+              </div>
+            </template>
+            <template #filter="{ filterModel }">
+              <InputText
+                v-model="filterModel.value"
+                type="text"
+                class="p-column-filter"
+                placeholder="Search by name"
+              />
             </template>
           </Column>
-          <Column field="lastLoginTime" header="Last Seen" :sortable="true">
+          <Column field="phone" header="Email Verified" :sortable="true">
             <template #body="{ data }">
-              <span v-if="data.lastLoginTime">
-                {{ moment(data.lastLoginTime).fromNow() }}
-              </span>
-              <span v-else> Never </span>
+              <div>{{ data.emailVerified }}</div>
             </template>
           </Column>
-        </template>
-        <template v-slot:actionCol="{ data }">
-          <router-link :to="{ name: 'UsersShow', params: { id: data.id } }">
-            <VaActionBtn :ariaLabel="'Show User'" icon="user" />
-          </router-link>
         </template>
       </VaAdvDataTable>
     </VaCard>
@@ -35,7 +57,8 @@
 
 <script>
 import { computed, defineComponent, onMounted, ref } from "vue";
-import moment from "moment";
+import { FilterMatchMode } from "primevue/api";
+import { cleanTimestamp } from "@/core/utils/common";
 
 export default defineComponent({
   props: {
@@ -56,10 +79,16 @@ export default defineComponent({
       isMounted.value = true;
     });
 
+    const onRowSelect = (data) => {
+      console.log("hello there");
+    };
+
     return {
+      cleanTimestamp,
+      FilterMatchMode,
       isMounted,
       isLoading,
-      moment,
+      onRowSelect,
     };
   },
 });

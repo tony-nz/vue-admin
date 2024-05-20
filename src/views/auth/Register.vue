@@ -76,12 +76,12 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
-import { useAuthStore } from "@tony-nz/vue-admin-core";
+import { useAppStore } from "@tony-nz/vue-admin-core";
 
 export default defineComponent({
   name: "Register",
   setup() {
-    const authStore = useAuthStore();
+    const appStore = useAppStore();
     const state = reactive({
       name: "",
       email: "",
@@ -90,7 +90,7 @@ export default defineComponent({
     });
 
     const register = async () => {
-      await authStore.register(state);
+      await appStore.register(state);
     };
 
     return {

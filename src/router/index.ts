@@ -1,20 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { authRoutes } from "./auth";
-import { defaultRoutes } from "./default";
-import { errorRoutes } from "./error";
+import { appRoutes } from "./app";
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: "/loginTest",
-      name: "loginTest",
-      component: () => import("@/views/auth/Login.vue"),
-    },
-    ...authRoutes,
-    ...defaultRoutes,
-  ],
-  scrollBehavior(to, from, savedPosition) {
+  routes: [...authRoutes, ...appRoutes],
+  scrollBehavior() {
     // always scroll to top
     return { left: 0, top: 0 };
   },

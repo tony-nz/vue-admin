@@ -2,15 +2,16 @@ import { createApp } from "vue";
 import { initPlugins } from "./plugins/init";
 import App from "@/App.vue";
 import router from "@/router";
-
-import "@/assets/styles.scss";
+import ToastService from "primevue/toastservice";
 
 /**
- * Load Tailwind CSS
+ * Load CSS
  */
-import "./assets/tailwind.css";
+import "./assets/style.css";
+import "primeicons/primeicons.css";
 
 const app = createApp(App);
+app.use(ToastService);
 
 /**
  * Initialize plugins
@@ -18,8 +19,8 @@ const app = createApp(App);
  * @param router vue router
  */
 initPlugins(app, router);
-app.use(router);
 
+app.use(router);
 app.mount("#app");
 
 export default app;

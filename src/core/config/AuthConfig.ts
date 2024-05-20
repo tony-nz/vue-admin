@@ -2,7 +2,7 @@ import type { AuthConfig } from "@tony-nz/vue-admin-core";
 
 const config: AuthConfig = {
   api: {
-    baseURL: "http://localhost:8000",
+    baseURL: process.env.VUE_APP_API_BASE_URL,
     csrfCookie: "/sanctum/csrf-cookie",
     login: "/login",
     logout: "/logout",
@@ -10,6 +10,7 @@ const config: AuthConfig = {
     update: "/api/auth/update",
     verify: "/api/auth/verify",
     permissions: "/api/auth/ability",
+    settings: "/api/settings",
   },
   oauth: {
     provider: "google",

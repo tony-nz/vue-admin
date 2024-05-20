@@ -34,7 +34,7 @@ import { defineComponent, ref } from "vue";
 import { translate } from "@tony-nz/vue-admin-core";
 import { useRoute, useRouter } from "vue-router";
 import { useToast } from "primevue/usetoast";
-import useAuthStore from "@tony-nz/vue-admin-core";
+import useAppStore from "@tony-nz/vue-admin-core";
 export default defineComponent({
   name: "GoogleCallBack",
 
@@ -42,7 +42,7 @@ export default defineComponent({
     const loading = ref(true);
     const router = useRouter();
     const route = useRoute();
-    const store = useAuthStore();
+    const store = useAppStore();
     const toast = useToast();
 
     const payload = {

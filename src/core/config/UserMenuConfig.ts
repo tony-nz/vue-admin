@@ -1,66 +1,50 @@
 import { ref } from "vue";
-import useAuthStore from "@tony-nz/vue-admin-core";
+import { useAppStore } from "@tony-nz/vue-admin-core";
 
-const UserMenuConfig = ref([
-  {
-    header: true,
-  },
-  {
-    separator: true,
-  },
-  {
-    label: "userMenu.accountSettings",
-    to: "/account",
-    slug: "account",
-    icon: "/media/icons/duotone/Interface/Monitor.svg",
-  },
-  {
-    label: "userMenu.language",
-    slug: "language",
-    svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-    icon: "fa-duotone fa-alicorn",
-    items: [
-      {
-        label: "English",
-        icon: "English",
-        command: () => {
-          const store = useAuthStore();
-          console.log("en");
-          store.setLocale("en");
+const UserMenuConfig = ref({
+  header: true,
+  footer: true,
+  seperators: true,
+  menu: [
+    {
+      items: [
+        {
+          label: "userMenu.accountSettings",
+          to: "/account",
+          slug: "account",
         },
-      },
-      {
-        label: "Maori",
-        icon: "Maori",
-        command: () => {
-          const store = useAuthStore();
-          console.log("maori");
-          store.setLocale("maori");
+        {
+          label: "userMenu.language",
+          slug: "language",
+          items: [
+            {
+              label: "English",
+              icon: "English",
+              command: () => {
+                const store = useAppStore();
+                store.setLocale("en");
+              },
+            },
+          ],
         },
-      },
-    ],
-  },
-  {
-    label: "userMenu.signOut",
-    slug: "sign-out",
-    svgIcon: "/media/icons/duotone/Interface/Monitor.svg",
-    icon: "fa-duotone fa-alicorn",
-    command: () => {
-      const store = useAuthStore();
-      store.logout();
-      // store
-      //   .dispatch("AuthModule/logout")
-      //   .then(() => router.push({ name: "login" }));
-      // store.dispatch("AuthModule/purgeAuth");
-      // store.dispatch("AuthModule/logout");
+      ],
     },
-  },
-  {
-    separator: true,
-  },
-  {
-    footer: true,
-  },
-]);
+    {
+      items: [
+        {
+          label: "userMenu.signOut",
+          slug: "sign-out",
+          command: () => {
+            useAppStore()
+              .logout()
+              .then(() => {
+                window.location.href = "/";
+              });
+          },
+        },
+      ],
+    },
+  ],
+});
 
 export default UserMenuConfig;

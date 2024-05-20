@@ -1,5 +1,29 @@
 {
   "va": {
+    "auth": {
+      "title": "Sign in to your account",
+      "or": "Or",
+      "continueWith": "Or continue with",
+      "email": "Email address",
+      "password": "Password",
+      "loginBtn": "Sign in",
+      "forgottenPassword": "Forgot your password?",
+      "rememberMe": "Remember me",
+      "register": "Sign-up for an account",
+      "social": {
+        "title": "Sign in with",
+        "google": "Continue with Google"
+      },
+      "error": {
+        "title": "Please fix the following errors:",
+        "invalidCredentials": "Invalid credentials",
+        "invalidEmail": "Invalid email address",
+        "required": "This field is required",
+        "minLength": "This field must be at least {length} characters long",
+        "email": "This field must be a valid email address",
+        "password": "This field must be at least {length} characters long"
+      }
+    },
     "datatable": {
       "search": "Search",
       "addFilter": "Add filter",
@@ -64,21 +88,21 @@
     }
   },
   "userApps": {
-    "attendance": {
-      "title": "Attendance",
-      "description": "Manage your attendance"
+    "customers": {
+      "title": "Customers",
+      "description": "Manage your customer base"
     },
-    "students": {
-      "title": "Students",
-      "description": "Manage your students"
+    "bookings": {
+      "title": "Bookings",
+      "description": "Keep track of your bookings"
     },
-    "staff": {
-      "title": "Staff",
-      "description": "Manage your staff & teachers"
+    "invoices": {
+      "title": "Invoices",
+      "description": "Accounts receivable"
     },
-    "classrooms": {
-      "title": "Classrooms",
-      "description": "Manage your classrooms"
+    "routeGenerator": {
+      "title": "Route Generator",
+      "description": "Make your routes more efficient"
     }
   },
   "userMenu": {
@@ -112,13 +136,58 @@
       "dashboard": "Dashboard",
       "resources": {
         "title": "Resources",
-        "googleOrgUnits": "Organization Units",
-        "users": "Users" 
+        "assignedBookings": "Assigned Bookings",
+        "containerSizes": "Container Sizes",
+        "containerTypes": "Container Types",
+        "customers": "Customers",
+        "customerTypes": "Customer Types",
+        "drivers": "Drivers",
+        "nonServicePeriods": "Non Service Periods",
+        "results": "Results",
+        "routes": "Routes",
+        "routeHistories": "Route Histories",
+        "routeHistoryItems": "Route History Items",
+        "routeBookings": "Route Bookings",
+        "services": "Services",
+        "serviceTypes": "Service Types",
+        "users": "Users",
+        "vehicles": "Vehicles",
+        "wasteType": "Waste Types"
       },
       "account": "Account"
+    },
+    "customers": {
+      "title": "Customers",
+      "customers": "Customers",
+      "customerTypes": "Customer Types"
+    },
+    "routeBookings": {
+      "title": "Routes & Bookings",
+      "bookings": "Bookings",
+      "routes": "Routes",
+      "services": "Services"
+    },
+    "settings": {
+      "title": "Settings",
+      "container": "Containers",
+      "drivers": "Drivers",
+      "services": "Services",
+      "results": "Results",
+      "serviceTypes": "Service Types",
+      "wasteTypes": "Waste Types"
+    },
+    "services": {
+      "title": "Services"
+    },
+    "locations": {
+      "title": "Locations"
     }
   },
   "error": {
+    "403": {
+      "title": "Unauthorized",
+      "description": "Sorry you don't have access to this page."
+    },
     "404": {
       "title": "Sorry we couldn't find this page.",
       "description": "The page you're looking for isn't available.<br />Try searching again or use the Go Back button below."
