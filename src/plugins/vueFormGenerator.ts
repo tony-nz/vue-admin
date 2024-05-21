@@ -9,7 +9,5 @@ export function initVueFormGenerator(app: App<Element>) {
   /**
    * Register VueFormGenerator
    */
-  app.use(VueFormGeneratorPlugin, {
-    googlePlace: { apiKey: process.env.VUE_APP_GOOGLE_MAPS_API_KEY },
-  });
+  app.use(VueFormGeneratorPlugin, {});
 }

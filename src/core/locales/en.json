@@ -9,7 +9,27 @@
       "loginBtn": "Sign in",
       "forgottenPassword": "Forgot your password?",
       "rememberMe": "Remember me",
-      "register": "register an account",
+      "registerAnAccount": "register an account",
+      "register": {
+        "title": "Register an account",
+        "createAccount": "Create account",
+        "byRegistering": "By registering, you agree to our",
+        "and": "and",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy",
+        "alreadyHaveAnAccount": "Already have an account?",
+        "login": "Login"
+      },
+      "forgot": {
+        "title": "Forgot your password?",
+        "description": "Enter your email address and we'll send you a link to reset your password.",
+        "send": "Send reset link",
+        "backToLogin": "Back to login",
+        "byForgetting": "By resetting your password, you agree to our",
+        "and": "and",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy"
+      },
       "social": {
         "title": "Sign in with",
         "google": "Continue with Google"

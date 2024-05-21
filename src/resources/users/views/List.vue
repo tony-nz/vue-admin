@@ -6,10 +6,10 @@
       :isLoading="isLoading"
       :clearCss="['content']"
       :classes="{
-        base: ['overflow-hidden', 'col-span-12'],
+        base: ['overflow-hidden', 'col-span-12', 'shadow-md', 'rounded-md'],
         content: ['flex', 'flex-col', 'flex-1', 'overflow-hidden'],
         card: ['h-full'],
-        header: ['bg-primary-500'],
+        header: ['bg-primary-500', 'dark:bg-primary-700'],
         title: ['text-white'],
         description: ['text-white'],
       }"

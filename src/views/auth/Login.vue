@@ -1,26 +1,21 @@
 <template>
   <div class="min-h-full flex w-full">
     <div
-      class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
+      class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-24"
     >
       <div class="mx-auto w-full max-w-sm lg:w-96">
         <div>
-          <!-- <img
-            class="h-12 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-            alt="Workflow"
-          /> -->
-          <h1>Vue Admin</h1>
-          <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+          <h1 class="text-gray-400">Vue Admin</h1>
+          <h2 class="mt-6 text-2xl text-gray-900">
             {{ translate("va.auth.title") }}
           </h2>
           <p v-if="allowRegistration" class="mt-2 text-sm text-gray-600">
             {{ translate("va.auth.or") }}
             <router-link
               to="/register"
-              class="font-medium text-primary-600 hover:text-primary-500"
+              class="text-primary-600 hover:text-primary-500"
             >
-              {{ translate("va.auth.register") }}
+              {{ translate("va.auth.registerAnAccount") }}
             </router-link>
           </p>
         </div>
@@ -103,7 +98,7 @@
                   type="email"
                   autocomplete="email"
                   required
-                  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                  class="block border border-grey-light w-full p-3 rounded mb-4 placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               <div
@@ -137,7 +132,7 @@
                   type="password"
                   autocomplete="current-password"
                   required
-                  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                  class="block border border-grey-light w-full p-3 rounded mb-4 placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 />
               </div>
               <div
@@ -169,12 +164,12 @@
               </div>
 
               <div class="text-sm">
-                <a
-                  href="#"
-                  class="font-medium text-primary-600 hover:text-primary-500"
+                <router-link
+                  to="/forgot"
+                  class="text-primary-600 hover:text-primary-500"
                 >
                   {{ translate("va.auth.forgottenPassword") }}
-                </a>
+                </router-link>
               </div>
             </div>
 
@@ -183,13 +178,10 @@
                 @click="handleSubmit"
                 :disabled="isLoggingIn"
                 type="submit"
-                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+                class="flex justify-center w-full text-center py-3 rounded bg-primary-500 text-white hover:bg-green-dark focus:outline-none my-1"
                 :class="{
                   'bg-gray-300': isLoggingIn,
                   'hover:bg-gray-300': isLoggingIn,
-                  'bg-primary-600': !isLoggingIn,
-                  'hover:bg-primary-700': !isLoggingIn,
-                  'focus:ring-primary-500': !isLoggingIn,
                 }"
               >
                 <div
@@ -204,7 +196,7 @@
           </div>
           <div
             v-if="errors && Object.keys(errors).length > 0"
-            class="mt-8 bg-red-100 border border-red-400 text-red-500 px-4 py-3 rounded relative"
+            class="my-8 bg-red-100 border border-red-400 text-red-500 px-4 py-3 rounded relative"
           >
             <!-- title showing server erros -->
             <div class="hidden font-bold text-lg text-red-500 mb-4 text-left">
@@ -216,13 +208,8 @@
               class=""
               role="alert"
             >
-              <!-- capitalize index -->
-              <strong class="font-bold">{{
-                index.toString().charAt(0).toUpperCase() +
-                index.toString().slice(1)
-              }}</strong>
               <!-- loop through and list (ul,li) error messages -->
-              <ul class="list-disc mt-2 ml-4">
+              <ul class="list-disc ml-4">
                 <li
                   v-for="(message, index) of messages"
                   :key="index"
@@ -236,17 +223,16 @@
         </div>
       </div>
     </div>
-    <div class="hidden lg:block relative w-0 flex-1 bg-primary-600">
-      <img
-        class="hidden absolute inset-0 h-full w-full object-cover"
-        src="/media/illustrations/login-bg.svg"
-        alt=""
-      />
+    <!-- bg-cover bg-left bg-[url('auth-bg.jpeg')] dark:bg-[url('auth-bg-dark.jpeg')] -->
+    <div class="bg-primary-600 flex flex-col flex-1 h-full justify-end">
+      <p class="p-4 text-right text-white opacity-40">
+        <!-- vue-admin-core: {{ getAppVersion }} -->
+      </p>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
+import { computed, defineComponent, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import { email, required } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
@@ -336,11 +322,18 @@ export default defineComponent({
       return replacedStr.charAt(0).toUpperCase() + replacedStr.slice(1);
     };
 
+    /**
+     * Get app version
+     * @returns {string}
+     */
+    // const getAppVersion = computed(() => store.getAppVersion);
+
     return {
       allowLocal,
       allowOAuth,
       allowRegistration,
       errors,
+      // getAppVersion,
       handleSubmit,
       isLoggingIn,
       loginLocally,
