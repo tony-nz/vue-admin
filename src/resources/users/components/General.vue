@@ -1,47 +1,106 @@
 <template>
   <VaCard
-    title="General"
-    :description="
-      'Google profile' + (user.fullName ? ' for ' + user.fullName : null)
-    "
+    v-if="isMounted"
+    :key="viewKey"
+    :isLoading="!isMounted"
+    :clearCss="['content']"
+    :classes="{
+      base: ['overflow-hidden', 'col-span-12', 'shadow-md', 'rounded-b-lg'],
+      content: ['flex', 'flex-col', 'flex-1', 'overflow-hidden', 'p-4'],
+      card: ['h-full', 'rounded-none'],
+    }"
   >
-    <VaForm
-      v-if="isMounted"
-      @onChange="updateData"
-      :data="user"
-      :fields="fields"
-      type="tabs"
+    <template v-slot:header_right>
+      <Button
+        :label="translate('va.actions.save')"
+        @click="submit = true"
+        :class="{ 'opacity-50': submit }"
+        :disabled="submit"
+      />
+    </template>
+    <VueFormGenerator
+      @updateData="updateData"
+      @validated="validated"
+      :data="modalData"
+      :fetchData="fetchResourceData"
+      :form="resource.fields"
+      :type="'form'"
+      :submit="submit"
     />
   </VaCard>
 </template>
 
-<script>
-import { defineComponent, onMounted, ref } from "vue";
-// import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
-import { fields } from "../fields";
+<script lang="ts">
+import { defineComponent, onActivated, onMounted, ref } from "vue";
+import { fetchResourceData } from "@/core/utils/common";
+import { useRoute } from "vue-router";
+import { useResourceStore, translate } from "@tony-nz/vue-admin-core";
 
 export default defineComponent({
+  name: "General",
   props: {
-    user: {
+    resource: {
       type: Object,
       required: true,
     },
   },
-  methods: {
-    updateData(data) {
-      this.$emit("updateData", data);
-    },
-  },
-  setup() {
+  setup(props) {
+    const dataValues = ref();
     const isMounted = ref(false);
-    onMounted(async () => {
+    const modalData = ref();
+    const route = useRoute();
+    const store = useResourceStore(props.resource)();
+    const submit = ref(false);
+    const viewKey = ref(0);
+
+    /**
+     * updateData
+     * @param {object} data
+     */
+    const updateData = (data) => {
+      modalData.value = data;
+    };
+
+    /**
+     * validated
+     * @param {boolean} valid
+     * @param {object} data
+     */
+    const validated = (valid, data = null) => {
+      modalData.value = data;
+      if (valid) {
+        if (dataValues.value) {
+          // add dataValues to modalData
+          modalData.value = { ...modalData.value, ...dataValues.value };
+        }
+        store.update({
+          params: modalData.value,
+          routeId: route.params.id,
+        });
+      }
+      submit.value = false;
+    };
+
+    onActivated(() => {
+      viewKey.value += 1;
+      modalData.value = store.getDataItem;
+    });
+
+    onMounted(() => {
+      modalData.value = store.getDataItem;
       isMounted.value = true;
-      // setCurrentPageBreadcrumbs("General", ["SMS", "Users", "Students"]);
     });
 
     return {
+      dataValues,
+      fetchResourceData,
       isMounted,
-      fields,
+      modalData,
+      submit,
+      translate,
+      updateData,
+      validated,
+      viewKey,
     };
   },
 });

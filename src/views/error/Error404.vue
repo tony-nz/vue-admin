@@ -14,7 +14,7 @@
       <div class="mb-20 md:mb-0">
         <button
           @click="goBack"
-          class="text-lg font-light outline-none focus:outline-none transform transition-all hover:scale-110 text-blue-500 hover:text-blue-600"
+          class="text-lg font-light outline-none focus:outline-none transform transition-all hover:scale-110 text-primary-500 hover:text-primary-600"
         >
           <i class="mdi mdi-arrow-left mr-2"></i>Go Back
         </button>

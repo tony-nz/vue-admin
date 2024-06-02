@@ -2,12 +2,6 @@ Currently working on filtering the form to show allowed fields only
 
 # vue-admin
 
-# Future notes
-
-We need to guard googleUserId for students, staff, etc
-Remove googleUser data on verify
-Add timestamps to logmodule
-
 ## Project setup
 
 ```

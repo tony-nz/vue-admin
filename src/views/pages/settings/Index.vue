@@ -5,7 +5,7 @@
         <div class="text-center sm:mt-0 sm:pt-1 sm:text-left w-full">
           <p class="text-xl font-bold text-white sm:text-2xl flex">Settings</p>
           <p class="text-sm font-normal text-gray-100">
-            Update your app settings here
+            Update your site settings here
           </p>
           <div class="mt-4 flex flex-row gap-4">
             <StatBox1 title="Title" description="Description goes here" />

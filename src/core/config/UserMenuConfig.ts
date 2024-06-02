@@ -13,20 +13,6 @@ const UserMenuConfig = ref({
           to: "/account",
           slug: "account",
         },
-        {
-          label: "userMenu.language",
-          slug: "language",
-          items: [
-            {
-              label: "English",
-              icon: "English",
-              command: () => {
-                const store = useAppStore();
-                store.setLocale("en");
-              },
-            },
-          ],
-        },
       ],
     },
     {

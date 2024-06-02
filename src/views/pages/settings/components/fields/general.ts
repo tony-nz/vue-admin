@@ -8,12 +8,11 @@ export const fields: Array<Form> = [
       {
         label: "General",
         class: "col-span-6",
-        description: "General settings for the user",
-        // class: "col-span-12",
+        description: "Settings for the site",
         fields: [
           {
             type: "text",
-            label: "Business Name",
+            label: "Site Name",
             placeholder: "",
             id: "site_name",
             required: true,
@@ -38,13 +37,13 @@ export const fields: Array<Form> = [
             placeholder: "Upload your logo",
             id: "site_logo",
           },
-          // {
-          //   type: "file",
-          //   label: "Favicon",
-          //   placeholder: "",
-          //   id: "site_logo",
-          //   required: false,
-          // },
+          {
+            type: "file",
+            label: "Favicon",
+            placeholder: "",
+            id: "site_logo",
+            required: false,
+          },
           // ['key' => 'site_logo', 'value' => 'logo.png'],
           // ['key' => 'site_favicon', 'value' => 'favicon.png'],
         ],

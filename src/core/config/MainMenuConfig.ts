@@ -43,7 +43,7 @@ const MainMenuConfig = ref([
           `),
       },
       {
-        label: "menu.settings.title",
+        label: "menu.main.settings.title",
         to: "/settings",
         icon:
           "data:image/svg+xml;charset=UTF-8;base64," +
@@ -62,6 +62,41 @@ const MainMenuConfig = ref([
               />
             </svg>
           `),
+      },
+      {
+        // errors drop down
+        label: "menu.main.errors.title",
+        to: "/errors",
+        type: "grid",
+        icon:
+          "data:image/svg+xml;charset=UTF-8;base64," +
+          btoa(`
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-11h-2v6h2v-6zm0 8h-2v2h2v-2z"
+              />
+            </svg>
+          `),
+        items: [
+          {
+            label: "menu.main.errors.403.title",
+            description: "menu.main.errors.403.description",
+            to: "/403",
+          },
+          {
+            label: "menu.main.errors.404.title",
+            description: "menu.main.errors.404.description",
+            to: "/404",
+          },
+          {
+            label: "menu.main.errors.500.title",
+            description: "menu.main.errors.500.description",
+            to: "/500",
+          },
+        ],
       },
     ],
   },

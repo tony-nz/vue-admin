@@ -1,5 +1,15 @@
 <template>
-  <VaCard v-if="isMounted" :key="viewKey" :isLoading="!isMounted">
+  <VaCard
+    v-if="isMounted"
+    :key="viewKey"
+    :isLoading="!isMounted"
+    :clearCss="['content']"
+    :classes="{
+      base: ['overflow-hidden', 'col-span-12', 'shadow-md', 'rounded-b-lg'],
+      content: ['flex', 'flex-col', 'flex-1', 'overflow-hidden', 'p-4'],
+      card: ['h-full', 'rounded-none'],
+    }"
+  >
     <VueFormGenerator
       @updateData="updateData"
       @validated="validated"

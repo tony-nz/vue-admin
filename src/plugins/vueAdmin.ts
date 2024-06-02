@@ -54,7 +54,6 @@ const pinia = createPinia();
  * @param app vue instance
  */
 export function initVueAdmin(app: App<Element>, router) {
-  console.log("config", config);
   const options = {
     app,
     config,

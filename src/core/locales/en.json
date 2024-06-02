@@ -154,53 +154,32 @@
     "main": {
       "title": "Main",
       "dashboard": "Dashboard",
-      "resources": {
-        "title": "Resources",
-        "assignedBookings": "Assigned Bookings",
-        "containerSizes": "Container Sizes",
-        "containerTypes": "Container Types",
-        "customers": "Customers",
-        "customerTypes": "Customer Types",
-        "drivers": "Drivers",
-        "nonServicePeriods": "Non Service Periods",
-        "results": "Results",
-        "routes": "Routes",
-        "routeHistories": "Route Histories",
-        "routeHistoryItems": "Route History Items",
-        "routeBookings": "Route Bookings",
-        "services": "Services",
-        "serviceTypes": "Service Types",
-        "users": "Users",
-        "vehicles": "Vehicles",
-        "wasteType": "Waste Types"
+      "errors": {
+        "title": "Errors",
+        "403": {
+          "title": "403",
+          "description": "Unauthorized access example"
+        },
+        "404": {
+          "title": "404",
+          "description": "Page not found example"
+        },
+        "500": {
+          "title": "500",
+          "description": "Internal server error example"
+        }
       },
-      "account": "Account"
+      "settings": {
+        "title": "Settings",
+        "account": "Account",
+        "users": "Users",
+        "roles": "Roles",
+        "permissions": "Permissions"
+      }
     },
-    "customers": {
-      "title": "Customers",
-      "customers": "Customers",
-      "customerTypes": "Customer Types"
-    },
-    "routeBookings": {
-      "title": "Routes & Bookings",
-      "bookings": "Bookings",
-      "routes": "Routes",
-      "services": "Services"
-    },
-    "settings": {
-      "title": "Settings",
-      "container": "Containers",
-      "drivers": "Drivers",
-      "services": "Services",
-      "results": "Results",
-      "serviceTypes": "Service Types",
-      "wasteTypes": "Waste Types"
-    },
-    "services": {
-      "title": "Services"
-    },
-    "locations": {
-      "title": "Locations"
+    "resources": {
+      "title": "Resources",
+      "users": "Users"
     }
   },
   "error": {
@@ -211,6 +190,10 @@
     "404": {
       "title": "Sorry we couldn't find this page.",
       "description": "The page you're looking for isn't available.<br />Try searching again or use the Go Back button below."
+    },
+    "500": {
+      "title": "Internal Server Error",
+      "description": "Sorry, something went wrong."
     }
   }
 }
