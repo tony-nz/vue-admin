@@ -3,11 +3,11 @@ import { fields } from "./fields";
 import config from "@/core/config/AppConfig";
 
 const resource = {
-  name: "users",
-  label: "Users",
-  url: "/users",
-  apiUrl: "/api/users",
-  lazy: true,
+  name: "permissions",
+  label: "Permissions",
+  url: "/permissions",
+  apiUrl: "/api/permissions",
+  lazy: false,
   roles: ["admin"],
   keepAlive: true,
   permissions: [
@@ -22,16 +22,16 @@ const resource = {
   },
   create: {
     modal: true,
-    page: true,
+    page: false,
   },
   show: {
-    modal: true,
-    page: true,
+    modal: false,
+    page: false,
   },
   delete: false,
   edit: {
     modal: true,
-    page: true,
+    page: false,
     sideBar: false,
   },
   routes: ["list", "create", "edit", "show"],
@@ -42,19 +42,15 @@ const resource = {
         operator: FilterOperator.AND,
         constraints: [{ value: null, matchMode: FilterMatchMode.CONTAINS }],
       },
-      email: {
-        operator: FilterOperator.AND,
-        constraints: [{ value: null, matchMode: FilterMatchMode.CONTAINS }],
-      },
     },
-    lazy: true,
+    lazy: false,
     scrollable: true,
     scrollHeight: "flex",
     filterDisplay: "menu",
     rows: 25,
     paginator: true,
     show: {
-      active: true,
+      active: false,
       actions: true,
       header: true,
       refresh: true,
@@ -63,7 +59,7 @@ const resource = {
       select: false,
     },
     toolbar: {
-      active: true,
+      active: false,
       create: true,
       refresh: true,
       select: false,
@@ -73,7 +69,7 @@ const resource = {
     selectionMode: "single",
     dataKey: "id",
     metaKeySelection: false,
-    globalFilterFields: ["name", "email"],
+    globalFilterFields: ["name"],
   },
 };
 

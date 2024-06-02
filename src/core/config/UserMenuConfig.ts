@@ -4,7 +4,7 @@ import { useAppStore } from "@tony-nz/vue-admin-core";
 const UserMenuConfig = ref({
   header: true,
   footer: true,
-  seperators: true,
+  seperators: false,
   menu: [
     {
       items: [

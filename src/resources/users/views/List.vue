@@ -15,7 +15,6 @@
       }"
     >
       <VaAdvDataTable
-        @rowSelect="onRowSelect"
         v-bind="resource.datatable"
         :resource="resource"
         class="flex flex-col flex-1"
@@ -44,9 +43,26 @@
               />
             </template>
           </Column>
-          <Column field="phone" header="Email Verified" :sortable="true">
+          <Column field="roles" header="Roles" :sortable="true">
             <template #body="{ data }">
-              <div>{{ data.emailVerified }}</div>
+              <div class="flex items-center gap-2">
+                <div
+                  v-for="role in data.roles"
+                  :key="role.id"
+                  class="text-left text-sm font-normal text-slate-500 px-2 py-1 rounded-lg bg-gray-100 dark:bg-slate-800 dark:text-white"
+                >
+                  {{ role.name }}
+                </div>
+              </div>
+            </template>
+          </Column>
+          <Column
+            field="emailVerified"
+            header="Email Verified"
+            :sortable="true"
+          >
+            <template #body="{ data }">
+              <div>{{ cleanTimestamp(data.emailVerified) }}</div>
             </template>
           </Column>
         </template>

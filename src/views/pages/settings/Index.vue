@@ -39,12 +39,14 @@
 import { computed, defineComponent, onActivated, onMounted, ref } from "vue";
 import { useAppStore } from "@tony-nz/vue-admin-core";
 import General from "./components/General.vue";
-import Users from "./components/Users.vue";
+import Permissions from "./components/Permissions.vue";
+import Roles from "./components/Roles.vue";
 
 export default defineComponent({
   components: {
     General,
-    Users,
+    Permissions,
+    Roles,
   },
   setup(props) {
     const activeIndex = ref(0);
@@ -64,8 +66,12 @@ export default defineComponent({
         component: General,
       },
       {
-        name: "Users",
-        component: Users,
+        name: "Permissions",
+        component: Permissions,
+      },
+      {
+        name: "Roles",
+        component: Roles,
       },
     ];
 
