@@ -6,6 +6,8 @@ export default {
       // Flex
       "inline-flex",
 
+      "w-full",
+
       // Size
       { "w-full": props.multiple },
 
@@ -70,6 +72,9 @@ export default {
       // Font
       "font-sans sm:text-sm leading-none",
 
+      // Size
+      "w-full",
+
       // Shape
       "appearance-none rounded-md",
       { "rounded-tr-none rounded-br-none": props.dropdown },
@@ -80,7 +85,7 @@ export default {
 
       // Spacing
       "m-0",
-      { "py-1.5 px-3": !props.multiple, "p-0": props.multiple },
+      { "py-3 px-3": !props.multiple, "p-0": props.multiple },
 
       // Colors
       "text-surface-700 dark:text-white/80",

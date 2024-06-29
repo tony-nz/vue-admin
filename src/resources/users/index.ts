@@ -7,7 +7,7 @@ const resource = {
   label: "Users",
   url: "/users",
   apiUrl: "/api/users",
-  lazy: true,
+  lazy: false,
   roles: ["admin"],
   keepAlive: true,
   permissions: [
@@ -34,6 +34,7 @@ const resource = {
     page: true,
     sideBar: false,
   },
+  lock: true,
   routes: ["list", "create", "edit", "show"],
   notifications: config.notifications,
   datatable: {

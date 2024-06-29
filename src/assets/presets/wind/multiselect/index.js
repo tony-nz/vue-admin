@@ -6,9 +6,11 @@ export default {
       "relative",
 
       // Shape
-      "w-full md:max-w-[20rem]",
+      "w-full",
       "rounded-md",
       "shadow-sm",
+      // Spacing
+      "py-2 px",
 
       // Color and Background
       "bg-surface-0 dark:bg-surface-900",

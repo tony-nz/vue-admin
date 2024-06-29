@@ -2,8 +2,8 @@ import { Form } from "@tony-nz/vue-form-generator/src/types/VueFormGenerator";
 
 export const fields: Array<Form> = [
   {
-    name: "Basic details",
-    description: "This is a description for the form",
+    name: "User details",
+    description: "Update user details and roles.",
     children: [
       {
         class: "col-span-12",
@@ -16,22 +16,24 @@ export const fields: Array<Form> = [
             required: true,
             class: "col-span-12",
           },
-          // {
-          //   type: "select",
-          //   label: "Gender",
-          //   id: "gender",
-          //   options: [
-          //     { name: "Female", id: "female" },
-          //     { name: "Male", id: "male" },
-          //   ],
-          //   required: true,
-          // },
           {
             type: "text",
             label: "Email",
-            placeholder: "john.smith@domain.school.nz",
+            placeholder: "john.smith@example.com",
             id: "email",
             required: true,
+          },
+          {
+            type: "multiselect",
+            label: "Roles",
+            id: "role_ids",
+            optionValue: "id",
+            optionsLabel: "name",
+            optionsUrl: "/api/roles",
+            // options: [
+            //   { id: 1, name: "admin" },
+            // ],
+            required: false,
           },
         ],
       },
