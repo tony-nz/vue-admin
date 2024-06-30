@@ -10,10 +10,9 @@
       @hide="close"
     >
       <template #header>
-        <div class="inline-flex items-center justify-center gap-2">
-          <vue-avatar :username="user.name" />
-          <span class="font-bold whitespace-nowrap">{{ user.name }}</span>
-        </div>
+        <h3 class="text-lg font-semibold">
+          Reset password for {{ user.name }}
+        </h3>
       </template>
       <div
         class="p-4 mb-4 bg-gray-100 dark:bg-slate-800 grid grid-cols-12 gap-4 text-left"
@@ -22,11 +21,15 @@
           <div class="grid grid-cols-12 gap-4 mx-auto">
             <div class="col-span-12">
               <label class="label mb-2" for="name">Password</label>
-              <Password v-model="password" toggleMask />
+              <Password v-model="password" toggleMask inputId="new_password" />
             </div>
             <div class="col-span-12">
               <label class="label mb-2" for="name">Confirm Password</label>
-              <Password v-model="confirmPassword" toggleMask />
+              <Password
+                v-model="confirmPassword"
+                toggleMask
+                inputId="new_password_confirm"
+              />
             </div>
           </div>
           <!-- show errors -->
