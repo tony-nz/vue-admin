@@ -35,6 +35,13 @@ export const fields: Array<Form> = [
             // ],
             required: false,
           },
+          {
+            type: "switch",
+            label: "Active",
+            placeholder: "",
+            id: "active",
+            required: false,
+          },
         ],
       },
     ],

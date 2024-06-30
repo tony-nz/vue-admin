@@ -7,7 +7,7 @@ const resource = {
   label: "Users",
   url: "/users",
   apiUrl: "/api/users",
-  lazy: false,
+  lazy: true,
   roles: ["admin"],
   keepAlive: true,
   permissions: [

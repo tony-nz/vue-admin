@@ -24,7 +24,11 @@
           <Column field="name" header="Name" :sortable="true">
             <template #body="{ data }">
               <div class="flex items-center">
-                <vue-avatar :size="40" :username="data.name" />
+                <vue-avatar
+                  :background-color="'#adf2be'"
+                  :size="40"
+                  :username="data.name"
+                />
                 <div class="ml-2">
                   <div class="text-left text-sm font-normal text-slate-500">
                     {{ data.name }}
