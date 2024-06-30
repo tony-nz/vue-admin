@@ -1,5 +1,6 @@
 import { App } from "vue";
 import { initVueAdmin } from "./vueAdmin";
+import { initVueAvatar } from "./vueAvatar";
 import { initVueFormGenerator } from "./vueFormGenerator";
 
 /**
@@ -16,4 +17,5 @@ export const initPlugins = async function (app: App<Element>, router) {
    */
   initVueFormGenerator(app);
   initVueAdmin(app, router);
+  initVueAvatar(app);
 };

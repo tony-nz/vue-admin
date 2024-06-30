@@ -23,4 +23,7 @@ initPlugins(app, router);
 app.use(router);
 app.mount("#app");
 
+// output all loaded components
+console.log(app._context.components);
+
 export default app;
